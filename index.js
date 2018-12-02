@@ -23,4 +23,5 @@ const openArticle = async url => {
   })
 }
 
+addEventListener("popstate", () => openCatalog());
 openCatalog();
