@@ -16,23 +16,23 @@ a {
   color: #3273dc
 }
 
-comment {
+.comment {
   filter: drop-shadow(1px 1px 3px rgba(0,0,0,.15));
   background-color: #f9f9f9;
 }
 
-comment:hover {
+.comment:hover {
   filter: drop-shadow(2px 2px 5px rgba(0,0,0,.2))
 }
 
-comment {
+.comment {
   margin: 2%;
   padding: 2%;
   border: 1px solid #cacaca;
   flex-grow: 1
 }
 
-comment p {
+.comment p {
   margin: 0
 }
 
