@@ -95,7 +95,7 @@ fragment AnyComment on CommentConnection {
     body: JSON.stringify({
       query,
       variables: {
-        url: "https://www.zerohedge.com/news/2018-12-01/trump-xi-dinner-concludes-applause-lasted-longer-expected"
+        url
       }
     })
   });
