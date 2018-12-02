@@ -5,12 +5,12 @@ const getHTML = async url => {
 };
 
 const getCatalog = async (page = 0) => {
-  const d = await getHTML("https://zerohedge.com/?page=" + page);
+  const d = await getHTML("https://www.zerohedge.com/?page=" + page);
   const main = d.body.querySelectorAll("main article.node");
   return Array.from(main).map(article => ({
-    url: "https://zerohedge.com/" + article.getAttribute("about"),
+    url: "https://www.zerohedge.com" + article.getAttribute("about"),
     title: article.querySelector(".teaser-title span").innerText,
-    image: "https://zerohedge.com/" + article.querySelector(".teaser-image img").getAttribute("src"),
+    image: "https://www.zerohedge.com" + article.querySelector(".teaser-image img").getAttribute("src"),
     description: article.querySelector(".teaser-text p").innerText
   }));
 };
