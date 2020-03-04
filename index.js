@@ -30,7 +30,7 @@ const showArticle = async url => {
       parent.appendChild(c)
 
       addComments(comment.replies.nodes, c)
-    }
+    })
   }
 
   addComments(comments, commentDiv)
