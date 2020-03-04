@@ -12,7 +12,7 @@ const getArticlePreviews = async (page = 0) => {
     const teaser = article.querySelector(".teaser-content")
     const image = teaser.querySelector("img").getAttribute("src")      
     return {
-      url: "https://www.zerohedge.com/" + header.querySelector("a").getAttribute("src") ,
+      url: "https://www.zerohedge.com/" + header.querySelector("a").getAttribute("href") ,
       title: header.innerText,
       image: (image[0] == "/") ? "https://www.zerohedge.com/" + image : image,
       description: teaser.innerText
