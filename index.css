@@ -25,19 +25,10 @@ article {
 }
 
 .comment {
-  filter: drop-shadow(1px 1px 3px rgba(0,0,0,.15));
-  background-color: #f9f9f9;
-}
-
-.comment:hover {
-  filter: drop-shadow(2px 2px 5px rgba(0,0,0,.2))
-}
-
-.comment {
-  margin: 2%;
-  padding: 2%;
+  margin: 2% 0% 0% 2%;
+  padding: 1%;
   border: 1px solid #cacaca;
-  flex-grow: 1
+  background-color: rgba(0, 0, 0, 0.025);
 }
 
 .comment p {
