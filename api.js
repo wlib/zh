@@ -10,11 +10,11 @@ const getArticlePreviews = async (page = 0) => {
   return Array.from(articles).map(article => {
     const header = article.querySelector(".teaser-title")
     const teaser = article.querySelector(".teaser-content")
-    const image = teaser.querySelector("img")
+    const image = teaser.querySelector("img").getAttribute("src")      
     return {
-      url: "https://www.zerohedge.com/" + header.querySelector("a").href,
+      url: "https://www.zerohedge.com/" + header.querySelector("a").getAttribute("src") ,
       title: header.innerText,
-      image: image.src,
+      image: (image[0] == "/") ? "https://www.zerohedge.com/" + image : image,
       description: teaser.innerText
     }
   })
