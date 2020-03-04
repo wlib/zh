@@ -16,6 +16,10 @@ a {
   color: #3273dc
 }
 
+.article {
+  cursor: pointer;
+}
+
 .comment {
   filter: drop-shadow(1px 1px 3px rgba(0,0,0,.15));
   background-color: #f9f9f9;
