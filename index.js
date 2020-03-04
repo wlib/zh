@@ -21,12 +21,19 @@ const showArticle = async url => {
   const commentDiv = document.createElement("div")
   commentDiv.classList.add("comments")
   document.body.appendChild(commentDiv)
-  comments.map(comment => {
-    const el = document.createElement("div")
-    el.classList.add("comment")
-    el.innerHTML = comment.richTextBody
-    commentDiv.appendChild(el)
-  })
+
+  const addComments = (comments, parent) => {
+    comments.map(comment => {
+      const c = document.createElement("div")
+      c.classList.add("comment")
+      c.innerHTML = comment.richTextBody
+      parent.appendChild(c)
+
+      addComments(comment.replies.nodes, c)
+    }
+  }
+
+  addComments(comments, commentDiv)
 }
 
 addEventListener("popstate", () => showArticlePreviews())
