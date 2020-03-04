@@ -12,9 +12,9 @@ const getArticlePreviews = async (page = 0) => {
     const teaser = article.querySelector(".teaser-content")
     const image = teaser.querySelector("img").getAttribute("src")      
     return {
-      url: "https://www.zerohedge.com/" + header.querySelector("a").getAttribute("href") ,
+      url: "https://www.zerohedge.com" + header.querySelector("a").getAttribute("href") ,
       title: header.innerText,
-      image: (image[0] == "/") ? "https://www.zerohedge.com/" + image : image,
+      image: (image[0] == "/") ? "https://www.zerohedge.com" + image : image,
       description: teaser.innerText
     }
   })
@@ -28,7 +28,7 @@ const getArticle = async url => {
   const images = article.querySelectorAll("a[data-image-href]")
   Array.from(images).map(a => {
     const image = a.getAttribute("href")
-    a.parentElement.outerHTML = `<img src="${(image[0] == "/") ? "https://www.zerohedge.com/" + image : image}">`
+    a.parentElement.outerHTML = `<img src="${(image[0] == "/") ? "https://www.zerohedge.com" + image : image}">`
   })
   return article
 }
