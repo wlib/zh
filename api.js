@@ -12,9 +12,9 @@ const getArticlePreviews = async (page = 0) => {
     const teaser = article.querySelector(".teaser-content")
     const image = teaser.querySelector("img")
     return {
-      url: header.querySelector("a").href,
+      url: "https://www.zerohedge.com/" + header.querySelector("a").href,
       title: header.innerText,
-      image: image.currentSrc,
+      image: image.src,
       description: teaser.innerText
     }
   })
