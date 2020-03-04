@@ -27,7 +27,8 @@ const getArticle = async url => {
   Array.from(ads).map(a => article.removeChild(a))
   const images = article.querySelectorAll("a[data-image-href]")
   Array.from(images).map(a => {
-    a.parentElement.outerHTML = `<img src="${a.href}">`
+    const image = a.getAttribute("href")
+    a.parentElement.outerHTML = `<img src="${(image[0] == "/") ? "https://www.zerohedge.com/" + image : image}">`
   })
   return article
 }
